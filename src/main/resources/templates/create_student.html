@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<title>insert </title>
+	<body>
+		<div>
+			<h1> create new student</h1>
+		</div>
+		<div>
+			<form th:action="@{/students}" th:object="${student}" method="POST">
+				<div>
+					<label>Student First name:</label>
+					<input type="text" name="firstName" th:field="*{firstName}" />
+					<label>Student Last name:</label>
+					<input type="text" name="lastName"  th:field="*{lastName}" />
+					<label>Student email Id:</label>
+					<input type="email" name="email" th:field="*{email}"/>
+					<button type="submit" > Submit</button>
+				</div>
+				
+			</form>
+		</div>
+	</body>
+</html>

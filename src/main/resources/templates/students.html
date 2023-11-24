@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Students Management System</title>
+	<meta http-equiv="refresh" content="5">
+</head>
+	<body>
+		<h1>List Students</h1>
+		<div>
+			<a th:href="@{/students/new}"> add student</a> &nbsp  &nbsp 
+			
+		</div>
+		<table >
+			<thead>
+				<tr>
+					<th style="background-color: rgb(255, 128, 192);" > First name &nbsp  &nbsp  </th>
+					<th style="background-color: yellow;"> last name &nbsp   &nbsp </th>  &nbsp 
+					<th style="background-color: rgb(128, 255, 255);"> email &nbsp  &nbsp &nbsp  </th>
+					<th>  &nbsp  &nbsp  Actions </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each = "student:${students}">
+					<td style="background-color: rgb(255, 128, 192);" th:text=${student.firstName}> </td>
+					<td style="background-color: yellow;" th:text=${student.lastName}> </td>
+					<td style="background-color: rgb(128, 255, 255);" th:text=${student.email}></td> 
+					<td  ><a th:href="@{/students/update/{id}(id=${student.id})}"> &nbsp  &nbsp  update &nbsp  </a></td>
+					<td> 
+					<a th:href="@{/students/{id}(id=${student.id})}">delete</a>
+					
+					</td>
+				</tr>
+			</tbody>
+			
+		</table>
+	</body>
+</html>
