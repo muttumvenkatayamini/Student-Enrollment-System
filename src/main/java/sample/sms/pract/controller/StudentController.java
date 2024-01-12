@@ -31,6 +31,7 @@ public class StudentController {
 		
 		model.addAttribute("students", studentService.getAllStudents());
 		return "students";
+		 //missing thymeleaf html files while pushing
 		
 	}
 	@GetMapping("/students/new")
@@ -39,6 +40,7 @@ public class StudentController {
 		 Student s1=new Student();
 		 model.addAttribute("student",s1);
 		return "create_student";
+		 //missing thymeleaf html files
 		 
 	 }
 		
@@ -46,6 +48,7 @@ public class StudentController {
 		  public String saveStudent(@ModelAttribute("student") Student student) {
 		 studentService.saveStudent(student); 
 		  return "redirect:/students";
+			   //missing thymeleaf html files
 		  
 		  }
 		 //add path variable annotation to get the id it is long type and we need to return some data to the view so we need model
@@ -55,6 +58,7 @@ public class StudentController {
 		// we need to get student id from the database for that we need to add method to the student service
 		model.addAttribute("student",studentService.getStudentById(id));
 		return "update_student";
+		  //missing thymeleaf html files
 		 
 	 }
 	
@@ -69,6 +73,7 @@ public class StudentController {
 		//save uploaded student objects
 		studentService.updateStudent(existingStudent);
 		return "redirect:/students";
+		 //missing thymeleaf html files
 		
 	}
 	//handler method to handle student request
@@ -76,6 +81,7 @@ public class StudentController {
 	 public String deletestudent(@PathVariable Long id){
 		 studentService.deleteStudentById(id);
 		 return "popup";
+		  //missing thymeleaf html files while pushing
 		 
 		 
 	 }
