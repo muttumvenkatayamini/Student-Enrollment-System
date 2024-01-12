@@ -17,6 +17,7 @@ import sample.sms.pract.service.StudentService;
 // we need to create this class as controller annotation because to make this class as a spring mvc class to handle the request
 public class StudentController {
 	// to create feature 
+	 //missing thymeleaf html files while pushing
 	
 	private StudentService studentService;
 
@@ -40,7 +41,7 @@ public class StudentController {
 		 Student s1=new Student();
 		 model.addAttribute("student",s1);
 		return "create_student";
-		 //missing thymeleaf html files
+		
 		 
 	 }
 		
@@ -48,7 +49,7 @@ public class StudentController {
 		  public String saveStudent(@ModelAttribute("student") Student student) {
 		 studentService.saveStudent(student); 
 		  return "redirect:/students";
-			   //missing thymeleaf html files
+			   //missing thymeleaf html files while pushing
 		  
 		  }
 		 //add path variable annotation to get the id it is long type and we need to return some data to the view so we need model
@@ -58,7 +59,7 @@ public class StudentController {
 		// we need to get student id from the database for that we need to add method to the student service
 		model.addAttribute("student",studentService.getStudentById(id));
 		return "update_student";
-		  //missing thymeleaf html files
+		  //missing thymeleaf html files while pushing
 		 
 	 }
 	
@@ -73,7 +74,7 @@ public class StudentController {
 		//save uploaded student objects
 		studentService.updateStudent(existingStudent);
 		return "redirect:/students";
-		 //missing thymeleaf html files
+		
 		
 	}
 	//handler method to handle student request
